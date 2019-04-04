@@ -1,0 +1,18 @@
+ProductCode,Name,Brand,Price,Stock
+1001,Laptop,Dell 3541,34200,50
+1002,Laptop,Dell 3542,34500,50
+1003,Headphones,Nokia,1010,100
+1004,Pendrive,Sandisk,585,0
+1005,Pendrive,HP,559,0
+1006,Laptop,HP Compaq,41990,50
+1007,Laptop,HP Pavilion,49990,50
+1008,Headphones,Samsung,799,100
+1009,Headphones,Philips,899,100
+1010,Pendrive,Transcend,1010,20
+1011,Laptop,Toshiba,30000,50
+1012,Laptop,Lenovo 440,30900,50
+1013,Laptop,Lenovo 420,28900,50
+1014,Headphones,Panasonic,999,100
+1015,Headphones,Samsung,399,100
+1016,Pendrive,Sony,610,20
+1017,Pendrive,Kingston,619,20
