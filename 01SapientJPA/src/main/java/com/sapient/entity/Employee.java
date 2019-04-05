@@ -1,12 +1,25 @@
 package com.sapient.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:empname")
+//	@NamedQuery(name="selectEmployeeByName", query="select e from Employee e where e.name=:empname")
+})
+
 public class Employee {
 	
 	@Id
@@ -18,6 +31,32 @@ public class Employee {
 	
 	double salary;
 	
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
+	List<Address> addresses;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="employee")
+	List<Email> emails;
+	
+	public List<Email> getEmails() {
+		return emails;
+	}
+	
+	public void setEmails(List<Email> emails) {
+		this.emails = emails;
+	}
+	
+	
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+
+
 	public Employee(){
 		
 	}
@@ -53,10 +92,18 @@ public class Employee {
 		this.salary = salary;
 	}
 
+
+//	@Override
+//	public String toString() {
+//		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", addresses=" + addresses + "]";
+//	}
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
+	
+	
 	
 	
 	
